@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.miaosha.Mapper.OrderMapper">
+
+
+    <insert id="addOrder" >
+    insert into t_order( order_user_id, order_product_id, order_msg) VALUES (#{user_id},#{product_id},#{msg})
+    </insert>
+    <select id="getOrderById" resultType="com.example.miaosha.Entity.Order">
+        select * from t_order where order_user_id=#{user_id} and order_product_id=#{product_id}
+
+    </select>
+
+</mapper>

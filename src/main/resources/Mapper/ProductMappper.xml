@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.miaosha.Mapper.ProductMapper">
+    <update id="updateProductNum">
+        update t_product set product_num = #{product_num} where product_id = #{product_id}
+    </update>
+
+    <select id="getAllProduct" resultType="com.example.miaosha.Entity.Product">
+        select * from t_product
+    </select>
+    <select id="getProductNum" resultType="java.lang.Integer">
+        select product_num from t_product where product_id = #{product_id}
+    </select>
+</mapper>
